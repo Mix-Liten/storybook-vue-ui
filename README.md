@@ -15,14 +15,28 @@ npm run serve
 npm run build
 ```
 
-### Run your tests
+### Storybook Compiles and hot-reloads for development
 ```
-npm run test
+npm run storybook:serve
+```
+
+### Storybook Compiles and minifies
+```
+npm run storybook:build
 ```
 
 ### Lints and fixes files
 ```
 npm run lint
+```
+
+### Use prettier
+```
+fix following field in package.json
+"extends": [
+      "plugin:vue/essential",
+      "@vue/prettier"
+    ],
 ```
 
 ### Customize configuration
