@@ -2,24 +2,51 @@
 import { storiesOf } from "@storybook/vue";
 import { action } from "@storybook/addon-actions";
 import { linkTo } from "@storybook/addon-links";
+import { withKnobs, text, boolean } from "@storybook/addon-knobs";
 
 import MyButton from "../components/MyButton.vue";
+import MyButtonTest from "../components/MyButtonTest.vue";
 
-storiesOf("Button", module)
-  .add("with text", () => ({
-    components: { MyButton },
-    template: '<my-button @click="action">Hello Button</my-button>',
-    methods: { action: action("clicked") }
-  }))
-  .add("with JSX", () => ({
-    components: { MyButton },
-    render() {
-      return <my-button onClick={this.action}>With JSX</my-button>;
+const stories = storiesOf("Button", module);
+stories.addDecorator(withKnobs);
+
+stories.add("with a button test", () => ({
+  components: {
+    MyButtonTest
+  },
+  props: {
+    isDisabled: {
+      default: boolean("Disabled", false)
     },
-    methods: { action: linkTo("Button", "with some emoji") }
-  }))
+    text: {
+      default: text("Text", "Hello Storybook")
+    }
+  },
+  template: `<MyButtonTest :isDisabled="isDisabled">{{ text }}</MyButtonTest>`
+}), {
+  info: {}
+});
+
+stories
+  .add("with text", () => ({
+    components: {
+      MyButton
+    },
+    template: '<my-button @click="action">Hello Button</my-button>',
+    methods: {
+      action: linkTo("Button", "with some emoji")
+    }
+  }), {
+    info: {}
+  })
   .add("with some emoji", () => ({
-    components: { MyButton },
+    components: {
+      MyButton
+    },
     template: '<my-button @click="action">😀 😎 👍 💯</my-button>',
-    methods: { action: action("clicked") }
-  }));
+    methods: {
+      action: action("clicked")
+    }
+  }), {
+    info: {}
+  });
