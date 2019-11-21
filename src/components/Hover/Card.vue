@@ -3,8 +3,8 @@
     <div class="item">
       <img src="https://picsum.photos/500/400?random=5">
       <div class="txt">
-        <h2>標題</h2>
-        <p>內容</p>
+        <h2>{{ title }}</h2>
+        <p>{{ content }}</p>
       </div>
     </div>
   </div>
@@ -12,7 +12,17 @@
 
 <script>
   export default {
-    name: "HoverCard"
+    name: "HoverCard",
+    props: {
+      title: {
+        type: String,
+        default: "標題"
+      },
+      content: {
+        type: String,
+        default: "內容"
+      },
+    }
   };
 </script>
 
