@@ -54,8 +54,7 @@
 </script>
 
 <style scoped>
-  @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap");
-  @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+  @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,700,900&display=swap");
   * {
     margin: 0;
     padding: 0;
@@ -99,6 +98,9 @@
   .footer-item nav a:hover {
     color: #fa0;
   }
+  .footer-item nav a:hover .fa-angle-right {
+    color: #fff;
+  }
   .footer-subs {
     display: flex;
     flex-direction: column;
@@ -129,5 +131,8 @@
     padding: 10px 0px;
     background-color: #3e5293;
     color: #70f6df;
+  }
+  .fa-angle-right::before {
+    content: "> ";
   }
 </style>

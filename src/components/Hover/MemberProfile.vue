@@ -26,12 +26,12 @@
 
 <script>
   export default {
-    name: "HoverMemberProfile",
+    name: "HoverMemberProfile"
   };
 </script>
 
 <style scoped>
-  @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,300,400,500,700,900&display=swap");
+  @import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:300,700,900&display=swap");
   * {
     margin: 0;
     padding: 0;
