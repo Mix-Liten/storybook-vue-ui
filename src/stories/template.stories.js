@@ -7,7 +7,7 @@ import { withKnobs, text, boolean } from "@storybook/addon-knobs";
 import MyButton from "../components/MyButton.vue";
 import MyButtonTest from "../components/MyButtonTest.vue";
 
-const stories = storiesOf("Button", module);
+const stories = storiesOf("Template", module);
 stories.addDecorator(withKnobs);
 
 stories.add("with a button test", () => ({
