@@ -154,6 +154,7 @@
   }
   .side-menu label {
     position: absolute;
+    z-index: -1;
     width: 40px;
     height: 80px;
     background-color: #000;
@@ -166,6 +167,7 @@
     text-align: center;
     font-size: 30px;
     border-radius: 0 10px 10px 0;
+    cursor: pointer;
   }
   #side-menu-switch {
     position: absolute;
@@ -215,7 +217,8 @@
     left: 100%;
     width: 300px;
     top: 6px;
-    background-color: rgba(255, 255, 255, 0.2);
+    /* background-color: rgba(255, 255, 255, 0.2); */
+    background-image: linear-gradient(0deg, #3381b0, #c2196c);
     box-shadow: 5px 5px 10px hsla(240, 40%, 15%, 0.6);
   }
   .nav li:hover > ul {
